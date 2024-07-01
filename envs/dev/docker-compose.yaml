@@ -1,0 +1,22 @@
+---
+services:
+  minio:
+    image: minio/minio
+    restart: always
+    command: server /data --console-address :9001
+    environment:
+      MINIO_ROOT_USER: hackme
+      #checkov:skip=CKV_SECRET_6:local dev environment
+      MINIO_ROOT_PASSWORD: becauseiforgottochangethepassword
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+
+  vault:
+    image: hashicorp/vault:1.16.2
+    restart: always
+    environment:
+      VAULT_DEV_ROOT_TOKEN_ID: "test"
+      VAULT_DEV_LISTEN_ADDRESS: 0.0.0.0:8200
+    ports:
+      - "8200:8200"

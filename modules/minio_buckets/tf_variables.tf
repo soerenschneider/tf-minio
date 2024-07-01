@@ -1,6 +1,11 @@
 variable "bucket_name" {
   type        = string
-  description = "Specifies the name of the bucket to be created in the replication source and replication target"
+  description = "Specifies the name of the bucket. Can not be used together with 'bucket_prefix'."
+}
+
+variable "bucket_prefix" {
+  type        = string
+  description = "Specifies the name of the bucket. Can not be used together with 'bucket_name'."
 }
 
 variable "force_destroy" {
@@ -22,11 +27,6 @@ variable "quota" {
 variable "object_locking" {
   type    = bool
   default = false
-}
-
-variable "bucket_prefix" {
-  type    = string
-  default = ""
 }
 
 variable "public" {

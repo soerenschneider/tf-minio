@@ -11,6 +11,9 @@ on:
 permissions:
   contents: read
 
+env:
+  TF_ENCRYPTION: 'key_provider "pbkdf2" "mykey" {passphrase = "somekeynotverysecure"}'
+
 jobs:
   fmt:
     name: fmt

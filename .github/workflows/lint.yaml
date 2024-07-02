@@ -29,8 +29,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: validate
         run: |
-          tofu -chdir=envs/prod init -backend=false
-          tofu -chdir=envs/prod validate
+          tofu -chdir=envs/dev init -backend=false
+          tofu -chdir=envs/dev validate
 
   tflint:
     name: tflint

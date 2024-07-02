@@ -11,29 +11,26 @@ on:
 permissions:
   contents: read
 
-env:
-  MYSQL_USERNAME: test
-
 jobs:
   fmt:
     name: fmt
     runs-on: ubuntu-latest
-    container: hashicorp/terraform:latest
+    container: ghcr.io/opentofu/opentofu:latest
     steps:
       - uses: actions/checkout@v4
       - name: fmt
-        run: terraform fmt -recursive -check
+        run: tofu fmt -recursive -check
 
   validate:
     name: validate
     runs-on: ubuntu-latest
-    container: hashicorp/terraform:latest
+    container: ghcr.io/opentofu/opentofu:latest
     steps:
       - uses: actions/checkout@v4
       - name: validate
         run: |
-          terraform -chdir=envs/prod init -backend=false
-          terraform -chdir=envs/prod validate
+          tofu -chdir=envs/prod init -backend=false
+          tofu -chdir=envs/prod validate
 
   tflint:
     name: tflint

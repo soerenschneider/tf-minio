@@ -3,3 +3,7 @@ pre-commit-init:
 
 pre-commit-update:
 	pre-commit autoupdate
+
+.PHONY:tests
+tests:
+	go test ./...

@@ -1,6 +1,6 @@
 buckets = [
   {
-    name = "bla",
+    name        = "bla",
     create_user = true,
 
   },
@@ -11,7 +11,7 @@ buckets = [
     }
     ilm = [
       {
-        name = "default",
+        name       = "default",
         expiration = "7d"
       }
     ]
@@ -26,7 +26,7 @@ users = [
     ],
     statements = [
       {
-        preset    = "readwrite",
+        preset = "readwrite",
       }
     ]
   },
@@ -34,7 +34,7 @@ users = [
     user_name = "bla"
     statements = [
       {
-        preset    = "readonly",
+        preset = "readonly",
         resources = [
           "arn:aws:s3:::test"
         ]

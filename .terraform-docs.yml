@@ -1,0 +1,4 @@
+---
+recursive:
+  enabled: true
+  include-main: false

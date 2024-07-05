@@ -60,4 +60,5 @@ module "vault" {
   source               = "../../modules/vault"
   access_keys          = nonsensitive(each.value.access_keys)
   password_store_paths = coalesce(each.value.password_store_paths, local.password_store_paths_default)
+  metadata             = {}
 }

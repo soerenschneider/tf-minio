@@ -23,6 +23,7 @@ jobs:
           scan-type: 'fs'
           scan-ref: '.'
           scanners: 'vuln,misconfig,secret'
+          trivy-config: ".trivy.yaml"
 
   checkov:
     name: checkov
@@ -31,4 +32,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: checkov
-        run: checkov -d .
+        run: checkov -d . --quiet

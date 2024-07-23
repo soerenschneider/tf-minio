@@ -1,5 +1,5 @@
 locals {
-  env                          = "dev"
+  env                          = basename(abspath(path.module))
   password_store_paths_default = ["env/${local.env}/minio/serviceaccount/%s"]
 }
 

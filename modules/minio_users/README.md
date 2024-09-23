@@ -31,7 +31,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_password_store_paths"></a> [password\_store\_paths](#input\_password\_store\_paths) | Paths to write the credentials to. | `list(string)` | n/a | yes |
-| <a name="input_policy_statements"></a> [policy\_statements](#input\_policy\_statements) | n/a | <pre>list(object({<br>    preset    = optional(string)<br>    actions   = optional(list(string))<br>    resources = optional(list(string))<br>    buckets   = optional(list(string))<br>  }))</pre> | n/a | yes |
+| <a name="input_policy_statements"></a> [policy\_statements](#input\_policy\_statements) | n/a | <pre>list(object({<br/>    preset    = optional(string)<br/>    actions   = optional(list(string))<br/>    resources = optional(list(string))<br/>    buckets   = optional(list(string))<br/>  }))</pre> | n/a | yes |
 | <a name="input_rotate_secret"></a> [rotate\_secret](#input\_rotate\_secret) | Rotates credentials for all users. Use with caution! | `bool` | `false` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | n/a | `map(any)` | `{}` | no |
 | <a name="input_user_name"></a> [user\_name](#input\_user\_name) | n/a | `string` | n/a | yes |

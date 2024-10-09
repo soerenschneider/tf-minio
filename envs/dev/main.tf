@@ -47,7 +47,7 @@ module "implicit_users" {
     }
   ]
 
-  password_store_paths = coalesce(each.value.password_store_paths)
+  password_store_paths = coalescelist(each.value.password_store_paths, var.password_store_paths, local.password_store_paths_default)
   rotate_secret        = var.rotate_credentials
   tags = {
     env   = local.instance,
@@ -59,6 +59,6 @@ module "vault" {
   for_each             = { for sa in merge(module.explicit_users, module.implicit_users) : sa.access_keys.name => sa }
   source               = "../../modules/vault"
   access_keys          = nonsensitive(each.value.access_keys)
-  password_store_paths = coalesce(each.value.password_store_paths, local.password_store_paths_default)
+  password_store_paths = coalescelist(each.value.password_store_paths, var.password_store_path, local.password_store_paths_default)
   metadata             = {}
 }

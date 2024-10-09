@@ -5,12 +5,12 @@ resource "vault_kv_secret_v2" "tokens" {
   delete_all_versions = true
   data_json = jsonencode(
     {
-      access_key = var.access_keys.access_key
-      secret_key = var.access_keys.secret_key
+      AWS_ACCESS_KEY_ID     = var.access_keys.access_key
+      AWS_SECRET_ACCESS_KEY = var.access_keys.secret_key
     }
   )
   custom_metadata {
-    max_versions = 2
+    max_versions = 1
     data         = var.metadata
   }
 }

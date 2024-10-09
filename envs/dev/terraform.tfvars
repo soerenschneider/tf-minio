@@ -1,3 +1,5 @@
+password_store_path = ["soeren.cloud/env/prod/minio/nas.ez.soeren.cloud/%s"]
+
 buckets = [
   {
     name        = "bla",
@@ -22,7 +24,7 @@ users = [
   {
     user_name = "soeren",
     password_store_paths = [
-      "users/soeren/minio/svcaccount/%s"
+      "soeren.cloud/env/prod/minio/nas.ez.soeren.cloud/%s"
     ],
     statements = [
       {

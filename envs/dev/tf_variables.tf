@@ -9,7 +9,7 @@ variable "buckets" {
       enabled           = bool
       exclude_folders   = optional(bool, false)
       excluded_prefixes = optional(list(string), [])
-      }), {
+    }), {
       enabled = false,
     })
     ilm = optional(list(object({
@@ -41,4 +41,10 @@ variable "rotate_credentials" {
   type        = bool
   default     = false
   description = "Rotates credentials for all users. Use with caution!"
+}
+
+variable "password_store_paths" {
+  type        = list(string)
+  default     = []
+  description = "Password storage path"
 }

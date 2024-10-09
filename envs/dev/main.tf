@@ -1,6 +1,6 @@
 locals {
-  env                          = basename(abspath(path.module))
-  password_store_paths_default = ["env/${local.env}/minio/serviceaccount/%s"]
+  instance                     = basename(abspath(path.module))
+  password_store_paths_default = ["env/${local.instance}/minio/serviceaccount/%s"]
 }
 
 module "buckets" {
@@ -23,7 +23,7 @@ module "explicit_users" {
   rotate_secret        = var.rotate_credentials
   password_store_paths = each.value.password_store_paths
   tags = {
-    env   = local.env,
+    env   = local.instance,
     users = "explicit"
   }
 }
@@ -50,7 +50,7 @@ module "implicit_users" {
   password_store_paths = coalesce(each.value.password_store_paths)
   rotate_secret        = var.rotate_credentials
   tags = {
-    env   = local.env,
+    env   = local.instance,
     users = "implicit"
   }
 }

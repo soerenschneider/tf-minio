@@ -51,12 +51,12 @@ func TestTerragrunt(t *testing.T) {
 	defer terraform.Destroy(t, terraformOptions)
 	terraform.Apply(t, terraformOptions)
 
-	secret, err := readVaultSecret(vaultUrl, vaultToken, "secret/data/users/soeren/minio/svcaccount/soeren")
+	secret, err := readVaultSecret(vaultUrl, vaultToken, "secret/data/env/dev/minio/serviceaccount/bucket-1")
 	assert.NoErrorf(t, err, "Could not read vault secret")
-	assert.Contains(t, secret, "access_key")
-	assert.Contains(t, secret, "secret_key")
+	assert.Contains(t, secret, "AWS_ACCESS_KEY_ID")
+	assert.Contains(t, secret, "AWS_SECRET_ACCESS_KEY")
 
-	err = checkBucket(strings.Replace(minioUrl, "http://", "", 1), secret["access_key"].(string), secret["secret_key"].(string), "bla")
+	err = checkBucket(strings.Replace(minioUrl, "http://", "", 1), secret["AWS_ACCESS_KEY_ID"].(string), secret["AWS_SECRET_ACCESS_KEY"].(string), "bucket-1")
 	assert.NoErrorf(t, err, "Could not check bucket/bucket does not exist")
 }
 

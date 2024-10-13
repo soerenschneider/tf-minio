@@ -2,12 +2,12 @@ password_store_path = ["soeren.cloud/env/prod/minio/nas.ez.soeren.cloud/%s"]
 
 buckets = [
   {
-    name        = "bla",
+    name        = "bucket-1",
     create_user = true,
 
   },
   {
-    name = "test",
+    name = "bucket-2",
     versioning = {
       enabled = true,
     }
@@ -33,14 +33,14 @@ users = [
     ]
   },
   {
-    user_name = "bla"
+    user_name = "bucket-1"
     statements = [
       {
         preset = "readonly",
         resources = [
           "arn:aws:s3:::test"
         ]
-        buckets = ["bla"]
+        buckets = ["bucket-1"]
       }
     ]
   }

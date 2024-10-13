@@ -9,7 +9,7 @@ variable "buckets" {
       enabled           = bool
       exclude_folders   = optional(bool, false)
       excluded_prefixes = optional(list(string), [])
-    }), {
+      }), {
       enabled = false,
     })
     ilm = optional(list(object({

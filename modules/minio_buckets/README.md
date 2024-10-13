@@ -31,11 +31,11 @@ No modules.
 | <a name="input_bucket_name"></a> [bucket\_name](#input\_bucket\_name) | Specifies the name of the bucket. Can not be used together with 'bucket\_prefix'. | `string` | n/a | yes |
 | <a name="input_bucket_prefix"></a> [bucket\_prefix](#input\_bucket\_prefix) | Specifies the name of the bucket. Can not be used together with 'bucket\_name'. | `string` | n/a | yes |
 | <a name="input_force_destroy"></a> [force\_destroy](#input\_force\_destroy) | n/a | `bool` | `false` | no |
-| <a name="input_ilm_rules"></a> [ilm\_rules](#input\_ilm\_rules) | n/a | <pre>list(object({<br>    name                               = string<br>    expiration                         = optional(string)<br>    filter                             = optional(string)<br>    noncurrent_version_expiration_days = optional(number)<br>    noncurrent_version_transition_days = optional(number)<br>  }))</pre> | `[]` | no |
+| <a name="input_ilm_rules"></a> [ilm\_rules](#input\_ilm\_rules) | n/a | <pre>list(object({<br/>    name                               = string<br/>    expiration                         = optional(string)<br/>    filter                             = optional(string)<br/>    noncurrent_version_expiration_days = optional(number)<br/>    noncurrent_version_transition_days = optional(number)<br/>  }))</pre> | `[]` | no |
 | <a name="input_object_locking"></a> [object\_locking](#input\_object\_locking) | n/a | `bool` | `false` | no |
 | <a name="input_public"></a> [public](#input\_public) | n/a | `bool` | `false` | no |
 | <a name="input_quota"></a> [quota](#input\_quota) | Quota for the bucket in megabytes. | `number` | `0` | no |
-| <a name="input_versioning"></a> [versioning](#input\_versioning) | n/a | <pre>object({<br>    enabled           = bool<br>    exclude_folders   = optional(bool, false)<br>    excluded_prefixes = optional(list(string), [])<br>  })</pre> | <pre>{<br>  "enabled": false<br>}</pre> | no |
+| <a name="input_versioning"></a> [versioning](#input\_versioning) | n/a | <pre>object({<br/>    enabled           = bool<br/>    exclude_folders   = optional(bool, false)<br/>    excluded_prefixes = optional(list(string), [])<br/>  })</pre> | <pre>{<br/>  "enabled": false<br/>}</pre> | no |
 
 ## Outputs
 

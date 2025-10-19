@@ -60,7 +60,7 @@ func TestTerragrunt(t *testing.T) {
 	})
 
 	defer terraform.Destroy(t, terraformOptions)
-	terraform.Apply(t, terraformOptions)
+	terraform.InitAndApply(t, terraformOptions)
 
 	secret, err := readVaultSecret(vaultUrl, vaultToken, vaultSecretPath)
 	assert.NoErrorf(t, err, "Could not read vault secret")

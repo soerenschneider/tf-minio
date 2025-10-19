@@ -7,3 +7,4 @@ repos:
       - id: tf-checkov
       - id: trivy
       - id: gitleaks
+      - id: go-unit-tests

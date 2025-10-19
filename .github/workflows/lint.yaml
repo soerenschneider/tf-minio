@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     container: ghcr.io/opentofu/opentofu:latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: fmt
         run: tofu fmt -recursive -check
 
@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     container: ghcr.io/opentofu/opentofu:latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: validate
         run: |
           tofu -chdir=envs/dev init -backend=false
@@ -40,6 +40,6 @@ jobs:
     runs-on: ubuntu-latest
     container: ghcr.io/soerenschneider/terraform-tools:latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: tflint
         run: tflint --recursive

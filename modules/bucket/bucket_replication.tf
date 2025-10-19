@@ -141,7 +141,6 @@ resource "minio_s3_bucket_replication" "replication_in_b" {
 
 locals {
   replication_mode_two_way = "two-way"
-  replication_mode_one_way = "one-way"
 }
 
 # Two-Way replication (A <-> B)

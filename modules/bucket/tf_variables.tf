@@ -15,7 +15,7 @@ variable "bucket_name" {
 
 variable "name_is_prefix" {
   type        = bool
-  default = false
+  default     = false
   description = "Specifies the name of the bucket is a prefix. In this case, a unique bucket name starting with the given prefix is automatically generated."
 }
 

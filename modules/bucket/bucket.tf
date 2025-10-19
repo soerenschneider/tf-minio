@@ -1,6 +1,6 @@
 locals {
-  acl_public  = "public"
-  acl_private = "private"
+  acl_public          = "public"
+  acl_private         = "private"
   versioning_enabled  = "Enabled"
   versioning_disabled = "Suspended"
 }

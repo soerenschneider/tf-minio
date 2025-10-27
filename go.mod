@@ -3,7 +3,7 @@ module tf-minio
 go 1.24.0
 
 require (
-	github.com/gruntwork-io/terratest v0.51.0
+	github.com/gruntwork-io/terratest v0.52.0
 	github.com/minio/minio-go/v7 v7.0.95
 	github.com/stretchr/testify v1.11.1
 )
